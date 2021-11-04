@@ -32,14 +32,15 @@ public class Movement : MonoBehaviour
         {
             {
                 rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
-
+                transform.localScale = new Vector2(0.4f, 0.4f);
             }
         }
         if (moveHorizontal < 0)
         {
             rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);
+            transform.localScale = new Vector2(-0.4f, 0.4f);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             if (InAir == false)
             {
@@ -47,5 +48,4 @@ public class Movement : MonoBehaviour
             }
         }
     }
-
 }
